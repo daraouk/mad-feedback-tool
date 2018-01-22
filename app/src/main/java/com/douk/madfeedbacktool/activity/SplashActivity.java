@@ -16,7 +16,7 @@ public class SplashActivity extends AppCompatActivity {
     /* NOTE: it's not good practice to let the user wait for no reason,
     and the splash should only show until the app is fully loaded. this is
     added ONLY for demonstration purposes */
-    private final int SPLASH_DISPLAY_TIME = 10000;
+    private final int SPLASH_DISPLAY_TIME = 5000;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
