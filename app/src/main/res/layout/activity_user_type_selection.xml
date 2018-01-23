@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.douk.madfeedbacktool.activities.UserTypeSelectionActivity">
+
+    <TextView
+        android:id="@+id/request_user_selection_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/user_type_prompt"
+        android:textSize="24sp"
+        android:textColor="@color/red"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.25" />
+
+    <Button
+        android:id="@+id/client_button"
+        android:layout_width="@dimen/selection_button_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/selection_button_margin_top"
+        android:background="@drawable/long_rounded_button"
+        android:text="@string/client_button_text"
+        android:textColor="@android:color/white"
+        android:stateListAnimator="@animator/button_elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/request_user_selection_text" />
+
+    <Button
+        android:id="@+id/employee_button"
+        android:layout_width="@dimen/selection_button_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/selection_button_margin_top"
+        android:background="@drawable/long_rounded_button"
+        android:text="@string/employee_button_text"
+        android:textColor="@android:color/white"
+        android:stateListAnimator="@animator/button_elevation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/client_button" />
+
+</android.support.constraint.ConstraintLayout>

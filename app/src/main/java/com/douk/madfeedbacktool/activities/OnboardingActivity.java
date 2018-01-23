@@ -1,6 +1,7 @@
-package com.douk.madfeedbacktool.activity;
+package com.douk.madfeedbacktool.activities;
 
 import android.animation.ArgbEvaluator;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -16,7 +17,7 @@ import android.widget.ImageView;
 
 import com.douk.madfeedbacktool.R;
 import com.douk.madfeedbacktool.adapters.OnboardingPagerAdapter;
-import com.douk.madfeedbacktool.util.SharedPreferencesHelper;
+import com.douk.madfeedbacktool.utils.SharedPreferencesHelper;
 
 public class OnboardingActivity extends AppCompatActivity {
 
@@ -88,7 +89,9 @@ public class OnboardingActivity extends AppCompatActivity {
                 /*
                 color update
                  */
-                int colorUpdate = (Integer) evaluator.evaluate(positionOffset, colorList[position], colorList[position == 2 ? position : position + 1]);
+                int colorUpdate = (Integer) evaluator
+                        .evaluate(positionOffset, colorList[position],
+                                colorList[position == 2 ? position : position + 1]);
                 mViewPager.setBackgroundColor(colorUpdate);
 
             }
@@ -134,7 +137,6 @@ public class OnboardingActivity extends AppCompatActivity {
         mSkipBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 finish();
             }
         });
@@ -146,7 +148,7 @@ public class OnboardingActivity extends AppCompatActivity {
                 //  update 1st time pref
                 SharedPreferencesHelper
                         .saveSharedSetting(OnboardingActivity.this,
-                                MainActivity.PREF_USER_FIRST_TIME, "false");
+                                UserTypeSelectionActivity.PREF_USER_FIRST_TIME, "false");
             }
         });
     }

@@ -7,4 +7,9 @@
 
     <dimen name="activity_margin_half">8dp</dimen>
     <dimen name="activity_margin_content">24dp</dimen>
+
+    <!-- User type selection buttons -->
+    <dimen name="selection_button_width">300dp</dimen>
+    <dimen name="selection_button_text_size">24sp</dimen>
+    <dimen name="selection_button_margin_top">32dp</dimen>
 </resources>
