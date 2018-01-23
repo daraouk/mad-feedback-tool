@@ -30,41 +30,22 @@ public class UserTypeSelectionActivity extends AppCompatActivity {
         userTypeSelectionIntent.putExtra(PREF_USER_FIRST_TIME, isUserFirstTime);
 
         //if (isUserFirstTime)
-        startActivity(userTypeSelectionIntent);
+            startActivity(userTypeSelectionIntent);
 
         // set content view
         setContentView(R.layout.activity_user_type_selection);
 
-        /****** TESTING CODE ONLY ********/
+        // move to next activity on client btn click
         Button clientBtn = (Button) findViewById(R.id.client_button);
-        Button employeeBtn = (Button) findViewById(R.id.employee_button);
 
         clientBtn.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                Log.i("UserTypeSelection", "Client button clicked.");
-
-                String emailSubject = "Button clicked!";
-                String emailBody = "User has selected Client mode.";
-
-                new SendMailTask(UserTypeSelectionActivity.this)
-                        .execute(emailSubject, emailBody);
-
-                finish();
-            }
-        });
-
-        employeeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.i("UserTypeSelection", "Employee button clicked.");
-
                 Intent feedbackIntent = new Intent(UserTypeSelectionActivity.this,
                         FeedbackActivity.class);
-                feedbackIntent.putExtra(PREF_USER_FIRST_TIME, isUserFirstTime);
                 startActivity(feedbackIntent);
-
-                finish();
             }
         });
+
     }
 }

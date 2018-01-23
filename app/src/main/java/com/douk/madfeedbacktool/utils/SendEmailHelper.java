@@ -66,7 +66,6 @@ public class SendEmailHelper {
     }
 
     public void sendEmail() throws AddressException, MessagingException {
-
         Transport transport = mailSession.getTransport("smtp");
         transport.connect(emailHost, fromEmail, fromPassword);
         Log.i("GMail","allrecipients: "+emailMessage.getAllRecipients());

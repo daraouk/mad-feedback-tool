@@ -1,10 +1,41 @@
 <resources>
+    <!-- Standard -->
     <string name="app_name">Mäd Feedback Tool</string>
-    <string name="title_activity_onboarding">Welcome to Mäd Feedback Tool</string>
-    <string name="action_settings">Settings</string>
-    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_onboarding">Welcome to Mäd Feedback!</string>
 
-    <string name="user_type_prompt">Please select the option which applies to you:</string>
+    <!-- Onboarding -->
+    <string name="section_1_title">Welcome to Mäd Feedback!</string>
+    <string name="section_1_desc">
+        Thank you for taking the time to help us at <b><font color="#FF0000">Mäd</font></b>
+        serve you better. Your feedback is extremely important to us as it ensures that we are
+        moving in the right direction for continued team growth and client satisfaction.
+    </string>
+
+    <string name="section_2_title">Specific Feedback Categories.</string>
+    <string name="section_2_desc">
+        To ensure that we are focusing our attention in all of the right places, you can give us
+        a rating and a few words in these five (5) primary categories:
+        <b><font color="#FF0000">Quality</font></b>,
+        <b><font color="#FF0000">Speed</font></b>,
+        <b><font color="#FF0000">Value</font></b>,
+        <b><font color="#FF0000">Creativity</font></b> and
+        <b><font color="#FF0000">Strategy</font></b>.
+    </string>
+
+    <string name="section_3_title">A Company That Cares.</string>
+    <string name="section_3_desc">
+        By providing us with your feedback through this app, we ensure that all of the
+        relevant project heads, management team and founders receive a copy of your feedback,
+        so don\'t worry about having your comments filtered by a public relations team.
+    </string>
+
+    <!-- User Type Selection -->
+    <string name="action_text"><b>Let\'s get started.</b></string>
+    <string name="user_type_prompt">Which of these best\n describes you?</string>
     <string name="client_button_text">I am a Client</string>
     <string name="employee_button_text">I am an Employee</string>
+
+    <!-- Feedback Screens -->
+    <string name="in_progress_button">Next »</string>
+    <string name="completed_button">Submit</string>
 </resources>

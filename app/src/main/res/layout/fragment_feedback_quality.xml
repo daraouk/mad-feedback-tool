@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/light_red">
+
+    <TextView
+        android:id="@+id/category_number_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Category 1"
+        android:textColor="@color/yellow"
+        android:textSize="@dimen/category_number_text_size"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.025" />
+
+    <TextView
+        android:id="@+id/category_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="QUALITY"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/category_header_text_size"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_number_text" />
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/components_margin_top"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_title" />
+
+    <EditText
+        android:id="@+id/category_comments_textbox"
+        android:layout_width="@dimen/category_comments_box_width"
+        android:layout_height="@dimen/category_comments_box_height"
+        android:layout_marginTop="@dimen/components_margin_top"
+        android:padding="10dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:gravity="left|top"
+        android:background="@drawable/border"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rating_bar" />
+
+    <Button
+        android:id="@+id/category_submit_button"
+        android:background="@drawable/long_rounded_white_button"
+        android:layout_width="@dimen/selection_button_width"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/components_margin_top"
+        android:text="@string/in_progress_button"
+        android:textSize="@dimen/selection_button_text_size"
+        android:textColor="@android:color/black"
+        android:stateListAnimator="@animator/button_elevation"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/category_comments_textbox" />
+</android.support.constraint.ConstraintLayout>

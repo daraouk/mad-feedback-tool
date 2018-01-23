@@ -4,13 +4,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.douk.madfeedbacktool.fragments.PlaceholderFragment;
+import java.util.ArrayList;
+import java.util.List;
 
-/**
- * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
- * one of the sections/tabs/pages.
- */
 public class OnboardingPagerAdapter extends FragmentPagerAdapter {
+
+    private final List<Fragment> sectionList = new ArrayList<>();
+    private final List<String> sectionTitleList = new ArrayList<>();
+    private final List<String> sectionDescriptionList = new ArrayList<>();
 
     public OnboardingPagerAdapter(FragmentManager fm) {
         super(fm);
@@ -18,14 +19,23 @@ public class OnboardingPagerAdapter extends FragmentPagerAdapter {
 
     @Override
     public Fragment getItem(int position) {
-        // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(position + 1);
+        return sectionList.get(position);
+    }
+
+    @Override
+    public CharSequence getPageTitle(int position) {
+        return sectionTitleList.get(position);
     }
 
     @Override
     public int getCount() {
-        // Show 3 total pages.
-        return 3;
+        return sectionList.size();
+    }
+
+    /* Add New Fragment */
+    public void addSection(Fragment fragment, String title, String desc) {
+        sectionList.add(fragment);
+        sectionTitleList.add(title);
+        sectionDescriptionList.add(desc);
     }
 }

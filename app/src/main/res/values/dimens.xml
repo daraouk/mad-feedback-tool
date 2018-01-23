@@ -4,12 +4,20 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
-
     <dimen name="activity_margin_half">8dp</dimen>
     <dimen name="activity_margin_content">24dp</dimen>
 
     <!-- User type selection buttons -->
+    <dimen name="title_text_size">32sp</dimen>
+    <dimen name="title_padding_bottom">24dp</dimen>
     <dimen name="selection_button_width">300dp</dimen>
-    <dimen name="selection_button_text_size">24sp</dimen>
+    <dimen name="selection_button_text_size">14sp</dimen>
     <dimen name="selection_button_margin_top">32dp</dimen>
+
+    <!-- Category ratings section -->
+    <dimen name="category_number_text_size">14sp</dimen>
+    <dimen name="category_header_text_size">28sp</dimen>
+    <dimen name="category_comments_box_width">340dp</dimen>
+    <dimen name="category_comments_box_height">235dp</dimen>
+    <dimen name="components_margin_top">20dp</dimen>
 </resources>

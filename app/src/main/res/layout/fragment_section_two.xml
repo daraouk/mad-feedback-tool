@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_horizontal_margin"
-    tools:context="com.douk.madfeedbacktool.fragments.PlaceholderFragment">
+    tools:context="com.douk.madfeedbacktool.fragments.SectionOneFragment">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -11,12 +11,11 @@
 
         <ImageView
             android:id="@+id/section_img"
-            android:layout_width="192dp"
+            android:layout_width="280dp"
             android:layout_height="192dp"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:alpha="0.30"
-            android:background="@drawable/ic_flight_24dp"
+            android:background="@drawable/section_two_team"
             android:scaleType="fitCenter" />
 
     </FrameLayout>
@@ -35,16 +34,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/black"
-            tools:text="Page One" />
+            android:text="@string/section_2_title" />
 
         <TextView
+            android:id="@+id/section_description"
             style="@style/TextAppearance.AppCompat.Body1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/activity_horizontal_margin"
             android:alpha="0.7"
             android:gravity="center"
-            android:text="Add a long description here about your app's important feature."
+            android:text="@string/section_2_desc"
             android:textColor="@android:color/black" />
 
     </LinearLayout>

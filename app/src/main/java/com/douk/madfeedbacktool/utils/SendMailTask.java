@@ -52,6 +52,11 @@ public class SendMailTask extends AsyncTask {
 
     @Override
     public void onPostExecute(Object result) {
-        statusDialog.dismiss();
+        // prevent window leaks
+        if(statusDialog != null) {
+            statusDialog.dismiss();
+        } else {
+            statusDialog = null;
+        }
     }
 }

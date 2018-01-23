@@ -15,13 +15,19 @@ public class SplashActivity extends AppCompatActivity {
     /* NOTE: it's not good practice to let the user wait for no reason,
     and the splash should only show until the app is fully loaded. this is
     added ONLY for demonstration purposes */
-    private final int SPLASH_DISPLAY_TIME = 5000;
+    private final int SPLASH_DISPLAY_TIME = 800;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        /* display splash screen for a certain length of time, then start activity */
+//        /*** OPTION 1: Don't let the user wait, load MainActivity ASAP ***/
+//        Intent mainIntent = new Intent(
+//                SplashActivity.this, UserTypeSelectionActivity.class);
+//        SplashActivity.this.startActivity(mainIntent);
+//        SplashActivity.this.finish();
+
+        /*** OPTION 2 (bad practice): Let splash show for 3 seconds, for branding purposes ***/
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
