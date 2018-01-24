@@ -15,7 +15,7 @@
             android:layout_height="192dp"
             android:layout_gravity="center"
             android:adjustViewBounds="true"
-            android:background="@drawable/section_two_team"
+            android:background="@drawable/section_three_team"
             android:scaleType="fitCenter" />
 
     </FrameLayout>
