@@ -48,4 +48,17 @@
     <string name="category_4_name">Creativity</string>
     <string name="category_5_title">Category 5</string>
     <string name="category_5_name">Strategy</string>
+
+    <!-- Completion Screen -->
+    <string name="success_title">Success!</string>
+    <string name="success_message">
+        Your feedback has been submitted to our team.\n
+        Thanks for helping to make us better!
+    </string>
+    <string name="error_title">Oops...</string>
+    <string name="error_message">
+        It seems like something went wrong.\n
+        Please try again later!
+    </string>
+    <string name="close_btn_text">Close</string>
 </resources>

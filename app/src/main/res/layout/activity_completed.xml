@@ -4,59 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.douk.madfeedbacktool.activities.UserTypeSelectionActivity">
+    tools:context="com.douk.madfeedbacktool.activities.CompletedActivity">
 
-    <TextView
-        android:id="@+id/get_started_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-condensed"
-        android:gravity="center"
+    <ImageView
+        android:id="@+id/success_error_icon"
+        android:layout_width="@dimen/icon_size"
+        android:layout_height="@dimen/icon_size"
         android:layout_marginTop="@dimen/layout_margins"
-        android:text="@string/action_text"
-        android:textColor="@color/textPrimary"
-        android:textSize="@dimen/title_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/success" />
 
     <TextView
-        android:id="@+id/request_user_selection_text"
+        android:id="@+id/success_error_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/components_margin"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
-        android:text="@string/user_type_prompt"
-        android:textColor="@color/textSecondary"
-        android:textSize="@dimen/sub_title_text_size"
+        android:text="@string/success_title"
+        android:textColor="@color/textPrimary"
+        android:textSize="@dimen/title_text_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/get_started_text" />
+        app:layout_constraintTop_toBottomOf="@+id/success_error_icon" />
 
-    <Button
-        android:id="@+id/client_button"
-        android:layout_width="@dimen/selection_button_width"
+    <TextView
+        android:id="@+id/success_error_message"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/buttons_margin"
-        android:background="@drawable/long_rounded_red_button"
-        android:stateListAnimator="@animator/button_elevation"
-        android:text="@string/client_button_text"
-        android:textColor="@android:color/white"
-        android:textSize="@dimen/selection_button_text_size"
-        app:layout_constraintBottom_toTopOf="@+id/employee_button"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-condensed"
+        android:gravity="center"
+        android:text="@string/success_message"
+        android:textColor="@color/textSecondary"
+        android:textSize="@dimen/sub_text_size"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/success_error_text" />
 
     <Button
-        android:id="@+id/employee_button"
+        android:id="@+id/close_button"
         android:layout_width="@dimen/selection_button_width"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/layout_margins"
-        android:background="@drawable/long_rounded_red_button"
+        android:background="@drawable/long_rounded_white_button"
         android:stateListAnimator="@animator/button_elevation"
-        android:text="@string/employee_button_text"
-        android:textColor="@android:color/white"
+        android:text="@string/close_btn_text"
+        android:textColor="@android:color/black"
         android:textSize="@dimen/selection_button_text_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

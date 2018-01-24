@@ -29,7 +29,7 @@ public class UserTypeSelectionActivity extends AppCompatActivity {
                 OnboardingActivity.class);
         userTypeSelectionIntent.putExtra(PREF_USER_FIRST_TIME, isUserFirstTime);
 
-        //if (isUserFirstTime)
+        //if (isUserFirstTime) ******************ENABLE WHEN LIVE***********************
             startActivity(userTypeSelectionIntent);
 
         // set content view
@@ -44,6 +44,8 @@ public class UserTypeSelectionActivity extends AppCompatActivity {
                 Intent feedbackIntent = new Intent(UserTypeSelectionActivity.this,
                         FeedbackActivity.class);
                 startActivity(feedbackIntent);
+
+                finish();
             }
         });
 
