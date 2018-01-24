@@ -5,9 +5,18 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.douk.madfeedbacktool.R;
 import com.douk.madfeedbacktool.adapters.FeedbackPagerAdapter;
+import com.douk.madfeedbacktool.fragments.CreativityFragment;
+import com.douk.madfeedbacktool.fragments.QualityFragment;
+import com.douk.madfeedbacktool.fragments.SectionOneFragment;
+import com.douk.madfeedbacktool.fragments.SectionThreeFragment;
+import com.douk.madfeedbacktool.fragments.SectionTwoFragment;
+import com.douk.madfeedbacktool.fragments.SpeedFragment;
+import com.douk.madfeedbacktool.fragments.StrategyFragment;
+import com.douk.madfeedbacktool.fragments.ValueFragment;
 
 public class FeedbackActivity extends AppCompatActivity {
 
@@ -30,6 +39,28 @@ public class FeedbackActivity extends AppCompatActivity {
         // feedback categories of the activity
         mFeedbackPagerAdapter = new FeedbackPagerAdapter(getSupportFragmentManager());
 
+        // add section fragments to adapter
+        mFeedbackPagerAdapter.addSection(
+                new QualityFragment(),
+                getString(R.string.category_1_title)
+        );
+        mFeedbackPagerAdapter.addSection(
+                new SpeedFragment(),
+                getString(R.string.category_1_title)
+        );
+        mFeedbackPagerAdapter.addSection(
+                new ValueFragment(),
+                getString(R.string.category_1_title)
+        );
+        mFeedbackPagerAdapter.addSection(
+                new CreativityFragment(),
+                getString(R.string.category_1_title)
+        );
+        mFeedbackPagerAdapter.addSection(
+                new StrategyFragment(),
+                getString(R.string.category_1_title)
+        );
+
         // initialize views
         zero = (ImageView) findViewById(R.id.intro_indicator_0);
         one = (ImageView) findViewById(R.id.intro_indicator_1);
@@ -45,7 +76,8 @@ public class FeedbackActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mFeedbackPagerAdapter);
 
-        mViewPager.setCurrentItem(page);
+        // set current items
+        setCurrentItem(page, false);
         updateIndicators(page);
 
         // on page change, update indicator to the current page
@@ -76,5 +108,10 @@ public class FeedbackActivity extends AppCompatActivity {
                     i == position ? R.drawable.indicator_selected : R.drawable.indicator_unselected
             );
         }
+    }
+
+    /* setCurrentItem() */
+    public void setCurrentItem (int item, boolean smoothScroll) {
+        mViewPager.setCurrentItem(item, smoothScroll);
     }
 }

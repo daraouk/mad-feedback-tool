@@ -37,4 +37,15 @@
     <string name="in_progress_button">Next »</string>
     <string name="completed_button">Submit</string>
     <string name="comments_hint_text">Enter any additional comments here...</string>
+
+    <string name="category_1_title">Category 1</string>
+    <string name="category_1_name">Quality</string>
+    <string name="category_2_title">Category 2</string>
+    <string name="category_2_name">Speed</string>
+    <string name="category_3_title">Category 3</string>
+    <string name="category_3_name">Value</string>
+    <string name="category_4_title">Category 4</string>
+    <string name="category_4_name">Creativity</string>
+    <string name="category_5_title">Category 5</string>
+    <string name="category_5_name">Strategy</string>
 </resources>
