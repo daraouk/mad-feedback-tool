@@ -2,26 +2,20 @@ package com.douk.madfeedbacktool.utils;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
+
+import com.douk.madfeedbacktool.activities.CompletedActivity;
 
 import java.util.List;
 
 public class SendMailTask extends AsyncTask {
 
-    private ProgressDialog statusDialog;
     private Activity sendMailActivity;
 
     public SendMailTask(Activity activity) {
         sendMailActivity = activity;
-    }
-
-    protected void onPreExecute() {
-        statusDialog = new ProgressDialog(sendMailActivity);
-        statusDialog.setMessage("Getting ready...");
-        statusDialog.setIndeterminate(false);
-        statusDialog.setCancelable(false);
-        statusDialog.show();
     }
 
     @Override
@@ -43,20 +37,5 @@ public class SendMailTask extends AsyncTask {
             Log.e("SendMailTask", e.getMessage(), e);
         }
         return null;
-    }
-
-    @Override
-    public void onProgressUpdate(Object... values) {
-        statusDialog.setMessage(values[0].toString());
-    }
-
-    @Override
-    public void onPostExecute(Object result) {
-        // prevent window leaks
-        if(statusDialog != null) {
-            statusDialog.dismiss();
-        } else {
-            statusDialog = null;
-        }
     }
 }
