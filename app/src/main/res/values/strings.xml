@@ -1,6 +1,6 @@
 <resources>
     <!-- Standard -->
-    <string name="app_name">Mäd Feedback Tool</string>
+    <string name="app_name">Mäd Feedback</string>
     <string name="title_activity_onboarding">Welcome to Mäd Feedback!</string>
 
     <!-- Onboarding -->
@@ -10,7 +10,6 @@
         serve you better. Your feedback is extremely important to us as it ensures that we are
         moving in the right direction for continued team growth and client satisfaction.
     </string>
-
     <string name="section_2_title">Specific Feedback Categories.</string>
     <string name="section_2_desc">
         To ensure that we are focusing our attention in all of the right places, you can give us
@@ -21,7 +20,6 @@
         <b><font color="#FF0000">Creativity</font></b> and
         <b><font color="#FF0000">Strategy</font></b>.
     </string>
-
     <string name="section_3_title">A Company That Cares.</string>
     <string name="section_3_desc">
         By providing us with your feedback through this app, we ensure that all of the
@@ -38,4 +36,5 @@
     <!-- Feedback Screens -->
     <string name="in_progress_button">Next »</string>
     <string name="completed_button">Submit</string>
+    <string name="comments_hint_text">Enter any additional comments here...</string>
 </resources>

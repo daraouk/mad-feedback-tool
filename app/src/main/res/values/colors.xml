@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Main Theme Colors -->
     <color name="colorPrimary">#F44336</color>
-    <color name="colorPrimaryDark">#B71C1C</color>
-    <color name="colorAccent">#FFCDD2</color>
+    <color name="colorPrimaryDark">#D32F2F</color>
+    <color name="colorAccent">#FFC107</color>
+    <color name="textPrimary">#212121</color>
+    <color name="textSecondary">#757575</color>
 
+    <!-- Indicators -->
     <color name="indicator_unselected">#4D000000</color>
 
+    <!-- Additional Material Colors -->
     <color name="blue_grey">#455A64</color>
     <color name="light_red">#EF5350</color>
     <color name="red">#F44336</color>
