@@ -13,8 +13,7 @@
         android:layout_marginTop="@dimen/layout_margins"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/success" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/success_error_text"
@@ -23,7 +22,6 @@
         android:layout_marginTop="@dimen/components_margin"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
-        android:text="@string/success_title"
         android:textColor="@color/textPrimary"
         android:textSize="@dimen/title_text_size"
         app:layout_constraintEnd_toEndOf="parent"
@@ -39,7 +37,6 @@
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif-condensed"
         android:gravity="center"
-        android:text="@string/success_message"
         android:textColor="@color/textSecondary"
         android:textSize="@dimen/sub_text_size"
         app:layout_constraintEnd_toEndOf="parent"

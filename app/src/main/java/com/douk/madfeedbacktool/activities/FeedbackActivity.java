@@ -33,7 +33,7 @@ public class FeedbackActivity extends AppCompatActivity {
     private String userSelectedType;
     private static String USER_TYPE_TITLE = "USER_SELECTED_TYPE";
 
-    static final String TAG = "FeedbackActivity";
+    private static final String TAG = "FeedbackActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

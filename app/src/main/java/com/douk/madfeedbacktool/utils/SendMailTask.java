@@ -61,10 +61,12 @@ public class SendMailTask extends AsyncTask {
         if (isMailSentSuccessfully) {
             Log.i(TAG, "Delivery successful.");
             Intent completedIntent = new Intent(sendMailActivity, CompletedActivity.class);
+            completedIntent.putExtra("MAIL_SUCCESS", true);
             sendMailActivity.startActivity(completedIntent);
         } else {
             Log.i(TAG, "Delivery failed.");
             Intent completedIntent = new Intent(sendMailActivity, CompletedActivity.class);
+            completedIntent.putExtra("MAIL_SUCCESS", false);
             sendMailActivity.startActivity(completedIntent);
         }
     }
