@@ -34,7 +34,7 @@
     <string name="employee_button_text">I am an Employee</string>
 
     <!-- Feedback Screens -->
-    <string name="in_progress_button">Next »</string>
+    <string name="in_progress_button">Save</string>
     <string name="completed_button">Submit</string>
     <string name="comments_hint_text">Enter any additional comments here...</string>
 

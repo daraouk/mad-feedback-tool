@@ -4,6 +4,7 @@ import android.util.Log;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 
@@ -37,8 +38,19 @@ public class SendEmailHelper {
     public SendEmailHelper(String emailSubject, String emailBody) {
         this.emailSubject = emailSubject;
         this.emailBody = emailBody;
-        toEmailList.add("ouk.dara@outlook.com");
-        toEmailList.add("vdb.dara.ouk@gmail.com");
+        toEmailList.addAll(Arrays.asList(
+                "ouk.dara@outlook.com",
+                "vdb.dara.ouk@gmail.com"
+        ));
+//        /***** ENABLE FOR LIVE *****/
+//        toEmailList.addAll(Arrays.asList(
+//                "ouk.dara@outlook.com",
+//                "erika@workwithmad.com",
+//                "manny@workwithmad.com",
+//                "parker@workwithmad.com",
+//                "kit@workwithmad.com",
+//                "uysimty@workwithmad.com"
+//        ));
 
         emailProperties = System.getProperties();
         emailProperties.put("mail.smtp.port", emailPort);

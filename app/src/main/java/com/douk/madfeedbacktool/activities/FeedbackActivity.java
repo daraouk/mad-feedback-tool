@@ -1,9 +1,12 @@
 package com.douk.madfeedbacktool.activities;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.ImageView;
 
 import com.douk.madfeedbacktool.R;
@@ -20,16 +23,42 @@ public class FeedbackActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     CoordinatorLayout mCoordinator;
 
+    SharedPreferences userTypePrefs;
+    SharedPreferences.Editor editor;
+
     ImageView zero, one, two, three, four;
     ImageView[] indicators;
 
     int page = 0; // to track page position
+    private String userSelectedType;
+    private static String USER_TYPE_TITLE = "USER_SELECTED_TYPE";
+
     static final String TAG = "FeedbackActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_feedback);
+
+        // set up sharedpreferences
+        userTypePrefs = this.getPreferences(Context.MODE_PRIVATE);
+        editor = userTypePrefs.edit();
+
+        // get selected user type from intent
+        Bundle extras = getIntent().getExtras();
+
+        // store to sharedpreferences
+        if(extras == null) {
+            userSelectedType = null;
+            editor.putString(USER_TYPE_TITLE, userSelectedType);
+            Log.i(TAG + "/" + USER_TYPE_TITLE, userSelectedType);
+        } else {
+            userSelectedType = extras.getString("USER_SELECTED_TYPE");
+            editor.putString(USER_TYPE_TITLE, userSelectedType);
+            Log.i(TAG + "/" + USER_TYPE_TITLE, userSelectedType);
+        }
+
+        editor.commit();
 
         // create the adapter that will return a fragment for each of the five
         // feedback categories of the activity
@@ -42,19 +71,19 @@ public class FeedbackActivity extends AppCompatActivity {
         );
         mFeedbackPagerAdapter.addSection(
                 new SpeedFragment(),
-                getString(R.string.category_1_title)
+                getString(R.string.category_2_title)
         );
         mFeedbackPagerAdapter.addSection(
                 new ValueFragment(),
-                getString(R.string.category_1_title)
+                getString(R.string.category_3_title)
         );
         mFeedbackPagerAdapter.addSection(
                 new CreativityFragment(),
-                getString(R.string.category_1_title)
+                getString(R.string.category_4_title)
         );
         mFeedbackPagerAdapter.addSection(
                 new StrategyFragment(),
-                getString(R.string.category_1_title)
+                getString(R.string.category_5_title)
         );
 
         // initialize views

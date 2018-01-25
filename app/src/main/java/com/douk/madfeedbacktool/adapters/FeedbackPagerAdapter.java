@@ -39,6 +39,4 @@ public class FeedbackPagerAdapter extends FragmentPagerAdapter {
         sectionList.add(fragment);
         sectionTitleList.add(title);
     }
-
-
 }
