@@ -8,20 +8,28 @@ import android.util.Log;
 
 import com.douk.madfeedbacktool.activities.CompletedActivity;
 
-import java.util.List;
-
 public class SendMailTask extends AsyncTask {
 
+    private ProgressDialog statusDialog;
     private Activity sendMailActivity;
+    boolean isMailSentSuccessfully;
 
-    public SendMailTask(Activity activity) {
-        sendMailActivity = activity;
+    private static final String TAG = "SendMailTask";
+
+    public SendMailTask(Activity activity) { sendMailActivity = activity; }
+
+    protected void onPreExecute() {
+        statusDialog = new ProgressDialog(sendMailActivity);
+        statusDialog.setMessage("Getting ready...");
+        statusDialog.setIndeterminate(false);
+        statusDialog.setCancelable(false);
+        statusDialog.show();
     }
 
     @Override
     protected Object doInBackground(Object... args) {
         try {
-            Log.i("SendMailTask", "About to instantiate GMail...");
+            Log.i(TAG, "About to instantiate SendMailHelper...");
             publishProgress("Processing input....");
             SendEmailHelper androidEmail = new SendEmailHelper(
                     args[0].toString(),
@@ -31,11 +39,33 @@ public class SendMailTask extends AsyncTask {
             publishProgress("Sending email....");
             androidEmail.sendEmail();
             publishProgress("Email Sent.");
-            Log.i("SendMailTask", "Mail Sent.");
+            Log.i(TAG, "Mail Sent.");
+            isMailSentSuccessfully = true;
         } catch (Exception e) {
             publishProgress(e.getMessage());
-            Log.e("SendMailTask", e.getMessage(), e);
+            Log.e(TAG, e.getMessage(), e);
+            isMailSentSuccessfully = false;
         }
         return null;
+    }
+
+    @Override
+    public void onProgressUpdate(Object... values) {
+        statusDialog.setMessage(values[0].toString());
+    }
+
+    @Override
+    public void onPostExecute(Object result) {
+        statusDialog.dismiss();
+
+        if (isMailSentSuccessfully) {
+            Log.i(TAG, "Delivery successful.");
+            Intent completedIntent = new Intent(sendMailActivity, CompletedActivity.class);
+            sendMailActivity.startActivity(completedIntent);
+        } else {
+            Log.i(TAG, "Delivery failed.");
+            Intent completedIntent = new Intent(sendMailActivity, CompletedActivity.class);
+            sendMailActivity.startActivity(completedIntent);
+        }
     }
 }

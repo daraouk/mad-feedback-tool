@@ -5,15 +5,11 @@ import android.support.design.widget.CoordinatorLayout;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import com.douk.madfeedbacktool.R;
 import com.douk.madfeedbacktool.adapters.FeedbackPagerAdapter;
 import com.douk.madfeedbacktool.fragments.CreativityFragment;
 import com.douk.madfeedbacktool.fragments.QualityFragment;
-import com.douk.madfeedbacktool.fragments.SectionOneFragment;
-import com.douk.madfeedbacktool.fragments.SectionThreeFragment;
-import com.douk.madfeedbacktool.fragments.SectionTwoFragment;
 import com.douk.madfeedbacktool.fragments.SpeedFragment;
 import com.douk.madfeedbacktool.fragments.StrategyFragment;
 import com.douk.madfeedbacktool.fragments.ValueFragment;
@@ -113,5 +109,11 @@ public class FeedbackActivity extends AppCompatActivity {
     /* setCurrentItem() */
     public void setCurrentItem (int item, boolean smoothScroll) {
         mViewPager.setCurrentItem(item, smoothScroll);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        finish();
     }
 }

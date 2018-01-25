@@ -4,18 +4,15 @@ package com.douk.madfeedbacktool.fragments;
  * Created by douk on 1/22/18.
  */
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.douk.madfeedbacktool.R;
-import com.douk.madfeedbacktool.activities.CompletedActivity;
 import com.douk.madfeedbacktool.utils.SendMailTask;
 
 public class StrategyFragment extends Fragment {
@@ -45,11 +42,6 @@ public class StrategyFragment extends Fragment {
             public void onClick(View view) {
                 // send the email in the background
                 new SendMailTask(getActivity()).execute(emailSubject, emailBody);
-
-                // start the completed activity and end current
-                Intent completedIntent = new Intent(getContext(), CompletedActivity.class);
-                startActivity(completedIntent);
-                getActivity().finish();
             }
         });
 
