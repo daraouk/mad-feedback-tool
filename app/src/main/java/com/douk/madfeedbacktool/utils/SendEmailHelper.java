@@ -40,7 +40,7 @@ public class SendEmailHelper {
         this.emailBody = emailBody;
         toEmailList.addAll(Arrays.asList(
                 "ouk.dara@outlook.com",
-                "vdb.dara.ouk@gmail.com"
+                "may.ouk.ca@gmail.com"
         ));
 //        /***** ENABLE FOR LIVE *****/
 //        toEmailList.addAll(Arrays.asList(
