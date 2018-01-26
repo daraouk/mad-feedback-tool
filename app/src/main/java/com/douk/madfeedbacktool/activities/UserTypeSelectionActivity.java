@@ -20,21 +20,24 @@ public class UserTypeSelectionActivity extends AppCompatActivity implements View
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // if this is the users first time launching the app,
-        // show the onboarding tutorial
+        // check if this is the users first time using the app
         isUserFirstTime = Boolean.valueOf(SharedPreferencesHelper
                 .readSharedSetting(
                         UserTypeSelectionActivity.this, PREF_USER_FIRST_TIME, "true"));
 
-        Intent userTypeSelectionIntent = new Intent(UserTypeSelectionActivity.this,
-                OnboardingActivity.class);
-        userTypeSelectionIntent.putExtra(PREF_USER_FIRST_TIME, isUserFirstTime);
+        // ** for testing
+        // isUserFirstTime = true;
 
-        /***** ENABLE FOR LIVE *****/
-        //if (isUserFirstTime)
-        // Log.i(TAG, "isUserFirstTime: true");
-        // Log.i(TAG, "isUserFirstTime: false");
-        startActivity(userTypeSelectionIntent);
+        // if yes, launch onboarding activity
+        if (isUserFirstTime) {
+            Log.i(TAG, "isUserFirstTime: true");
+            Intent onboardingIntent = new Intent(UserTypeSelectionActivity.this,
+                    OnboardingActivity.class);
+            onboardingIntent.putExtra(PREF_USER_FIRST_TIME, isUserFirstTime);
+            startActivity(onboardingIntent);
+        } else {
+            Log.i(TAG, "isUserFirstTime: false");
+        }
 
         // set content view
         setContentView(R.layout.activity_user_type_selection);

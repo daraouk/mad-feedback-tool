@@ -38,19 +38,15 @@ public class SendEmailHelper {
     public SendEmailHelper(String emailSubject, String emailBody) {
         this.emailSubject = emailSubject;
         this.emailBody = emailBody;
+        /* SET EMAIL RECIPIENTS HERE */
         toEmailList.addAll(Arrays.asList(
                 "ouk.dara@outlook.com",
-                "kit@workwithmad.com"
+                "erika@workwithmad.com",
+                "manny@workwithmad.com",
+                "parker@workwithmad.com",
+                "kit@workwithmad.com",
+                "uysimty@workwithmad.com"
         ));
-//        /***** ENABLE FOR LIVE *****/
-//        toEmailList.addAll(Arrays.asList(
-//                "ouk.dara@outlook.com",
-//                "erika@workwithmad.com",
-//                "manny@workwithmad.com",
-//                "parker@workwithmad.com",
-//                "kit@workwithmad.com",
-//                "uysimty@workwithmad.com"
-//        ));
 
         emailProperties = System.getProperties();
         emailProperties.put("mail.smtp.port", emailPort);
